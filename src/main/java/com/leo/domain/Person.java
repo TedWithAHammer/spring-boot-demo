@@ -5,19 +5,23 @@ import org.springframework.stereotype.Component;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 
 /**
  * Created by wangliying on 2017/4/9.
  * Description:test bean
  */
 @Entity
-@Component
-public class BaseBean {
+public class Person {
     @Id
     @GeneratedValue
     private int id;
     private String name;
+    @Min(value=10,message = "too young")
     private int age;
+    public Person(){
+
+    }
 
     public int getId() {
         return id;

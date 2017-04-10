@@ -5,16 +5,16 @@ package com.leo.db;
  * Description:
  */
 public class ResultCallback<T> {
-    public int Code;
+    public int code;
     private String msg;
     private T data;
 
     public int getCode() {
-        return Code;
+        return code;
     }
 
     public void setCode(int code) {
-        Code = code;
+        this.code = code;
     }
 
     public String getMsg() {
