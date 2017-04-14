@@ -1,6 +1,6 @@
 package com.leo.controller;
 
-import com.leo.db.ResultCallback;
+import com.leo.domain.ResultCallback;
 import com.leo.domain.Person;
 import com.leo.service.DataService;
 import com.leo.utils.ResultHandleUtil;
@@ -12,7 +12,7 @@ import javax.validation.Valid;
 
 /**
  * Created by wangliying on 2017/4/10.
- * Description:
+ * Description:standard test for spring-boot
  */
 @RestController
 public class SpringStandardController {

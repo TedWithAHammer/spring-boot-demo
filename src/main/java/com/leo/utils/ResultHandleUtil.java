@@ -1,6 +1,6 @@
 package com.leo.utils;
 
-import com.leo.db.ResultCallback;
+import com.leo.domain.ResultCallback;
 import com.leo.enums.ResultEnum;
 
 /**

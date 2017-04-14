@@ -10,3 +10,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.leo.domain
+  config-location: classpath:mybatis/mybatis-config.xml

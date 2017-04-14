@@ -13,6 +13,7 @@ import javax.validation.constraints.Min;
  */
 @Entity
 public class Person {
+
     @Id
     @GeneratedValue
     private int id;

@@ -1,6 +1,7 @@
 package com.leo.service;
 
 import com.leo.domain.Person;
+import com.leo.mapper.PersonMapper;
 import com.leo.repository.SpringDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,8 @@ public class DataService {
 
     @Autowired
     private SpringDataRepository repository;
+
+    private PersonMapper personMapper;
 
 
     public List<Person> findAll() {
@@ -36,6 +39,11 @@ public class DataService {
 
     public Person updatePerson(Person person) {
         return repository.save(person);
+    }
+
+
+    public List<Person> findAllPersonInMyBatis() {
+        return personMapper.findAllPersons();
     }
 
 

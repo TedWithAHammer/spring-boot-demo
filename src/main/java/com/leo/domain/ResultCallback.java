@@ -1,4 +1,4 @@
-package com.leo.db;
+package com.leo.domain;
 
 /**
  * Created by wangliying on 2017/4/9.

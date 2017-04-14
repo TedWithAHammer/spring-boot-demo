@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * Created by wangliying on 2017/4/9.
- * Description:
+ * Description:spring way
  */
 public interface SpringDataRepository extends JpaRepository<Person, Integer> {
     List<Person> findByName(String name);
