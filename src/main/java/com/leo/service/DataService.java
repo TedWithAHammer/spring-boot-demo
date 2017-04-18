@@ -1,5 +1,6 @@
 package com.leo.service;
 
+import com.leo.dao.PersonAnnotationDao;
 import com.leo.domain.Person;
 import com.leo.mapper.PersonMapper;
 import com.leo.repository.SpringDataRepository;
@@ -18,7 +19,11 @@ public class DataService {
     @Autowired
     private SpringDataRepository repository;
 
+    @Autowired
     private PersonMapper personMapper;
+
+    @Autowired
+    private PersonAnnotationDao personAnnotationDao;
 
 
     public List<Person> findAll() {
@@ -42,8 +47,12 @@ public class DataService {
     }
 
 
-    public List<Person> findAllPersonInMyBatis() {
+    public List<Person> findAllPersonXMLWithMyBatis() {
         return personMapper.findAllPersons();
+    }
+
+    public List<Person> findAllPersonInAnnotationWithMyBatis() {
+        return personAnnotationDao.findAllPersons();
     }
 
 

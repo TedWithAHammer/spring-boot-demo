@@ -15,5 +15,5 @@ import java.util.List;
 @Mapper
 public interface PersonAnnotationDao {
     @Select("SELECT * FROM person")
-    List<Person> findAll();
+    List<Person> findAllPersons();
 }

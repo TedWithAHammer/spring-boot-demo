@@ -23,7 +23,7 @@ public class SpringControllerTest {
 
     @Test
     public void testMvc() throws Exception {
-        mvc.perform(MockMvcRequestBuilders.get("/findAll"))
+        mvc.perform(MockMvcRequestBuilders.get("/findAllPersons"))
                 .andExpect(MockMvcResultMatchers.status().is2xxSuccessful());
     }
 

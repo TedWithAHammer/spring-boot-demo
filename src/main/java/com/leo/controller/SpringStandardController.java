@@ -47,4 +47,15 @@ public class SpringStandardController {
         return ResultHandleUtil.handleSuccess(service.updatePerson(person));
     }
 
+    @GetMapping("/mybatis/annotation/findAll")
+    public ResultCallback findAllWithAnnotationMybatis() {
+        return ResultHandleUtil.handleSuccess(service.findAllPersonInAnnotationWithMyBatis());
+    }
+
+    @GetMapping("/mybatis/xml/findAll")
+    public ResultCallback findAllWithXMLMybatis() {
+        return ResultHandleUtil.handleSuccess(service.findAllPersonXMLWithMyBatis());
+    }
+
+
 }

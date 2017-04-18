@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class MyBatisTest {
 
-
+    @Autowired
     private PersonMapper personMapper;
     @Autowired
     private PersonAnnotationDao personAnnotationDao;
@@ -25,11 +25,11 @@ public class MyBatisTest {
 
     @Test
     public void testMyBatisFindAllPersons() {
-        Assert.assertEquals(1, personMapper.findAllPersons().size());
+        Assert.assertEquals(13, personMapper.findById(1).getAge());
     }
 
     @Test
     public void testAnnotationFindAllPersons() {
-        Assert.assertEquals(1, personAnnotationDao.findAll().size());
+        Assert.assertEquals(1, personAnnotationDao.findAllPersons().size());
     }
 }
