@@ -13,4 +13,17 @@
     <!--<springProfile name="staging">-->
     <!--<logger name="org.springboot.sample" level="INFO"/>-->
     <!--</springProfile>-->
+    <appender name="myConsole" class="ch.qos.logback.core.ConsoleAppender">
+        <!--输出格式-->
+        <encoder>
+            　　　　　　　　
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+            　　　　　　
+        </encoder>
+    </appender>
+    <root level="info">
+        　　　　　　　　
+        <appender-ref ref="myConsole"/>
+        　　　　　　
+    </root>
 </configuration>
