@@ -13,7 +13,7 @@
         SELECT *
         FROM person
     </select>
-    <select id="findById" resultType="Person">
+    <select id="findById" resultType="person">
         SELECT * FROM person WHERE id=#{id}
     </select>
     <insert id="insertPerson" keyProperty="id">
