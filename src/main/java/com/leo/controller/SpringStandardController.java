@@ -4,6 +4,8 @@ import com.leo.domain.ResultCallback;
 import com.leo.domain.Person;
 import com.leo.service.DataService;
 import com.leo.utils.ResultHandleUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +18,7 @@ import javax.validation.Valid;
  */
 @RestController
 public class SpringStandardController {
+    private static Logger logger = LoggerFactory.getLogger("SpringStandardController");
     @Autowired
     private DataService service;
 
@@ -49,7 +52,7 @@ public class SpringStandardController {
 
     @GetMapping("/mybatis/annotation/findAll")
     public ResultCallback findAllWithAnnotationMybatis() {
-        return ResultHandleUtil.handleSuccess(service.findAllPersonInAnnotationWithMyBatis());
+        return ResultHandleUtil.handleSuccess(service.findAllPersonInAnnotationWithMybatis());
     }
 
     @GetMapping("/mybatis/xml/findAll")
@@ -58,4 +61,9 @@ public class SpringStandardController {
     }
 
 
+    @PostMapping("/mybatis/xml/insertPerson")
+    public ResultCallback insertPersonInXMLWithMybatis(Person person) {
+        service.insertPersonInXMLWithMybatis(person);
+        return ResultHandleUtil.handleSuccess(null);
+    }
 }

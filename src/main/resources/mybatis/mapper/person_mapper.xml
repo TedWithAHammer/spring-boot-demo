@@ -16,4 +16,7 @@
     <select id="findById" resultType="Person">
         SELECT * FROM person WHERE id=#{id}
     </select>
+    <insert id="insertPerson" keyProperty="id">
+        insert into person(age,name) values(#{age},#{name})
+    </insert>
 </mapper>

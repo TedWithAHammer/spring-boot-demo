@@ -51,8 +51,12 @@ public class DataService {
         return personMapper.findAllPersons();
     }
 
-    public List<Person> findAllPersonInAnnotationWithMyBatis() {
+    public List<Person> findAllPersonInAnnotationWithMybatis() {
         return personAnnotationDao.findAllPersons();
+    }
+
+    public void insertPersonInXMLWithMybatis(Person person) {
+        personMapper.insertPerson(person.getAge(), person.getName());
     }
 
 

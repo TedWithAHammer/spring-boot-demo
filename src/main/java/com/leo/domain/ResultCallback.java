@@ -32,4 +32,9 @@ public class ResultCallback<T> {
     public void setData(T data) {
         this.data = data;
     }
+
+    @Override
+    public String toString() {
+        return "code:" + code + "\nmsg:" + msg + "\ndata:" + (data == null ? "null" : data.toString());
+    }
 }

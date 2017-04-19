@@ -15,9 +15,10 @@ import java.util.List;
 @Component
 @Mapper
 public interface PersonMapper {
-    //    @Select("SELECT * FROM person")
     List<Person> findAllPersons();
 
     Person findById(int id);
+
+    void insertPerson(int age,String name);
 
 }

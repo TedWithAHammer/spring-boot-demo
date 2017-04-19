@@ -1,6 +1,7 @@
 package com.leo;
 
 import com.leo.dao.PersonAnnotationDao;
+import com.leo.domain.Person;
 import com.leo.mapper.PersonMapper;
 import org.junit.Assert;
 import org.junit.Test;
@@ -31,5 +32,14 @@ public class MyBatisTest {
     @Test
     public void testAnnotationFindAllPersons() {
         Assert.assertEquals(1, personAnnotationDao.findAllPersons().size());
+    }
+
+    @Test
+    public void testXmlInsert(){
+        Person person=new Person();
+        person.setAge(33);
+        person.setName("kkgg");
+        personMapper.insertPerson(33,"lkkkggg");
+        Assert.assertEquals(5,personMapper.findAllPersons().size());
     }
 }

@@ -10,8 +10,15 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 30000
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: com.leo.domain
-#  config-location: classpath:mybatis/mybatis-config.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  level: debug
 
