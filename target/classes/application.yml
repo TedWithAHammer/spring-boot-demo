@@ -17,7 +17,8 @@ spring:
     timeout: 30000
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-  config-location: classpath:mybatis/mybatis-config.xml
   type-aliases-package: com.leo.domain
-#debug: true
+  config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  level: debug
 

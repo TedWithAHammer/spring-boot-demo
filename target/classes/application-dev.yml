@@ -9,5 +9,17 @@ server:
 attribute1: 1
 attribute2: wly
 compound: "attribute1 is ${attribute1},attribute2 is ${attribute2}"
+spring:
+  redis:
+    timeout:  0
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
 
 
