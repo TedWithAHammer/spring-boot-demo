@@ -1,7 +1,7 @@
 package com.leo.controller;
 
-import com.leo.domain.ResultCallback;
 import com.leo.domain.Person;
+import com.leo.domain.ResultCallback;
 import com.leo.service.DataService;
 import com.leo.utils.ResultHandleUtil;
 import org.slf4j.Logger;
@@ -31,8 +31,9 @@ public class SpringStandardController {
 
 
     @PostMapping("/test")
-    public void test(@RequestParam("name") String name) {
+    public ResultCallback test(@RequestParam("name") String name) {
         logger.info(name);
+        return ResultHandleUtil.handleSuccess(name);
     }
 
     @GetMapping("/findAll")
