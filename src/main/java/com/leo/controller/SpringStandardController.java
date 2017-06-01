@@ -30,6 +30,11 @@ public class SpringStandardController {
     }
 
 
+    @PostMapping("/test")
+    public void test(@RequestParam("name") String name) {
+        logger.info(name);
+    }
+
     @GetMapping("/findAll")
     public ResultCallback findAll() {
         return ResultHandleUtil.handleSuccess(service.findAll());
