@@ -3,6 +3,7 @@ package com.leo.controller;
 import com.leo.domain.ResultCallback;
 import com.leo.domain.Person;
 import com.leo.service.DataService;
+import com.leo.utils.RabbitMQSender;
 import com.leo.utils.ResultHandleUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.callback.CallbackHandler;
 import javax.validation.Valid;
 
 /**
@@ -21,6 +23,8 @@ public class SpringStandardController {
     private static Logger logger = LoggerFactory.getLogger("SpringStandardController");
     @Autowired
     private DataService service;
+    @Autowired
+    private RabbitMQSender rabbitMQSender;
 
     @PostMapping("/insertRecord")
     public ResultCallback insertRecord(@Valid Person person, BindingResult result) throws Exception {
@@ -69,6 +73,24 @@ public class SpringStandardController {
     @PostMapping("/mybatis/xml/insertPerson")
     public ResultCallback insertPersonInXMLWithMybatis(Person person) {
         service.insertPersonInXMLWithMybatis(person);
+        return ResultHandleUtil.handleSuccess(null);
+    }
+
+    @GetMapping("/rabbitmq/queue1/send")
+    public ResultCallback rabbitmqSend2Queue1(@RequestParam("msg") String msg) {
+        rabbitMQSender.send2Queue1(msg);
+        return ResultHandleUtil.handleSuccess(null);
+    }
+
+    @GetMapping("/rabbitmq/queue2/send")
+    public ResultCallback rabbitmqSend2Queue2(@RequestParam("msg") String msg) {
+        rabbitMQSender.send2Queue2(msg);
+        return ResultHandleUtil.handleSuccess(null);
+    }
+
+    @GetMapping("/rabbitmq/queue3/send")
+    public ResultCallback rabbitmqSend2Queue3(@RequestParam("msg") String msg) {
+        rabbitMQSender.send2Queue3(msg);
         return ResultHandleUtil.handleSuccess(null);
     }
 }

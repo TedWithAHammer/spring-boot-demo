@@ -21,7 +21,6 @@ public class ResultHandleUtil {
         result.setCode(200);
         result.setMsg("success");
         result.setData(obj);
-        logger.info(result.toString());
         return result;
     }
 

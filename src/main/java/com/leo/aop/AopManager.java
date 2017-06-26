@@ -17,13 +17,13 @@ import org.springframework.stereotype.Component;
 public class AopManager {
     private static Logger log = LoggerFactory.getLogger(AopManager.class.getSimpleName());
 
-    @Pointcut("execution(public * com.leo.controller.*.*(..))")
-    public void log() {
-
-    }
-
-    @Before("log()")
-    public void handleException(JoinPoint joinPoint) {
-        log.info(joinPoint.getSignature().toLongString());
-    }
+//    @Pointcut("execution(public * com.leo.controller.*.*(..))")
+//    public void log() {
+//
+//    }
+//
+//    @Before("log()")
+//    public void handleException(JoinPoint joinPoint) {
+//        log.info(joinPoint.getSignature().toLongString());
+//    }
 }
