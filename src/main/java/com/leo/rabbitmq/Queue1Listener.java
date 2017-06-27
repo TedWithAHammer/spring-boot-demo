@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RabbitListener(queues = RabbitMQConfig.QUEUE1, containerFactory = "simpleRabbitListenerContainerFactory")
-public class Queue1Listener implements ChannelAwareMessageListener {
+public class Queue1Listener  {
     private static Logger logger = LoggerFactory.getLogger(Queue1Listener.class);
 
     @RabbitHandler
@@ -25,8 +25,6 @@ public class Queue1Listener implements ChannelAwareMessageListener {
         logger.info("listener1 info: " + s);
     }
 
-    @Override
-    public void onMessage(Message message, Channel channel) throws Exception {
-        logger.info("listener1 receive:" + message);
-    }
+
+
 }
