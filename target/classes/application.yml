@@ -21,5 +21,7 @@ mybatis:
   config-location: classpath:mybatis/mybatis-config.xml
 server:
   port: 8081
+
+
 #debug: true
 

@@ -1,0 +1,13 @@
+server:
+  address:
+  port: 8081
+
+wrapper:
+ id: 1
+ name: aaa
+
+attribute1: 1
+attribute2: wly
+compound: "attribute1 is ${attribute1},attribute2 is ${attribute2}"
+
+
